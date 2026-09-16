@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        DocumentFlow | Admin Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="admin-layout">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-brand">
+
+            <div class="brand-icon">
+                D
+            </div>
+
+            <span>
+                DocumentFlow
+            </span>
+
+        </div>
+
+
+        <div class="admin-menu-title">
+            MANAGEMENT
+        </div>
+
+
+        <nav class="admin-nav">
+
+            <a
+                href="admin.html"
+                class="admin-nav-link active"
+            >
+
+                <span class="nav-icon">
+                    ▦
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="index.html"
+                class="admin-nav-link"
+            >
+
+                <span class="nav-icon">
+                    +
+                </span>
+
+                Submit Page
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+
+                    <strong>
+                        System Online
+                    </strong>
+
+                    <small>
+                        All services operational
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="admin-main">
+
+
+        <header class="admin-topbar">
+
+            <div>
+
+                <div class="admin-eyebrow">
+                    ADMINISTRATION
+                </div>
+
+                <h1>
+                    Document Dashboard
+                </h1>
+
+                <p>
+                    Review and manage submitted documents.
+                </p>
+
+            </div>
+
+
+            <button
+                class="refresh-btn"
+                onclick="loadRequests()"
+            >
+
+                <span>↻</span>
+
+                Refresh
+
+            </button>
+
+        </header>
+
+
+        <!-- STATISTICS -->
+
+        <section class="admin-stats">
+
+
+            <div class="admin-stat">
+
+                <div class="stat-top">
+
+                    <span class="stat-title">
+                        Total Requests
+                    </span>
+
+                    <div class="stat-icon blue">
+                        #
+                    </div>
+
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="totalRequests"
+                >
+                    0
+                </div>
+
+                <div class="stat-description">
+                    All submitted documents
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <div class="stat-top">
+
+                    <span class="stat-title">
+                        Pending
+                    </span>
+
+                    <div class="stat-icon orange">
+                        !
+                    </div>
+
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="pendingRequests"
+                >
+                    0
+                </div>
+
+                <div class="stat-description">
+                    Waiting for review
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <div class="stat-top">
+
+                    <span class="stat-title">
+                        Approved
+                    </span>
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="approvedRequests"
+                >
+                    0
+                </div>
+
+                <div class="stat-description">
+                    Successfully approved
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <div class="stat-top">
+
+                    <span class="stat-title">
+                        Rejected
+                    </span>
+
+                    <div class="stat-icon red">
+                        ×
+                    </div>
+
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="rejectedRequests"
+                >
+                    0
+                </div>
+
+                <div class="stat-description">
+                    Rejected submissions
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REQUESTS -->
+
+        <section class="requests-card">
+
+            <div class="requests-header">
+
+                <div>
+
+                    <h2>
+                        Document Requests
+                    </h2>
+
+                    <p>
+                        Review submitted documents and update their status.
+                    </p>
+
+                </div>
+
+
+                <div class="live-indicator">
+
+                    <span></span>
+
+                    Live
+
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Applicant
+                            </th>
+
+                            <th>
+                                Email
+                            </th>
+
+                            <th>
+                                Document
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="requestsTable">
+
+                        <tr>
+
+                            <td
+                                colspan="6"
+                                class="table-loading"
+                            >
+                                Loading requests...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div
+                id="emptyState"
+                class="admin-empty"
+                style="display:none;"
+            >
+
+                <div class="empty-icon">
+                    □
+                </div>
+
+                <h3>
+                    No documents yet
+                </h3>
+
+                <p>
+                    Submitted documents will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="admin.js"></script>
+
+</body>
+</html>

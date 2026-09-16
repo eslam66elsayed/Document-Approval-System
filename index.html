@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocumentFlow | Submit Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="brand">
+        <div class="brand-icon">D</div>
+        <span>DocumentFlow</span>
+    </div>
+
+    <div class="secure-badge">
+        <span class="secure-dot"></span>
+        Secure Submission
+    </div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                Document Approval System
+            </div>
+
+            <h1>
+                Submit your document
+                <span>with confidence.</span>
+            </h1>
+
+            <p>
+                Upload your document securely and let our approval
+                workflow handle the rest.
+            </p>
+
+        </div>
+    </section>
+
+
+    <section class="submission-section">
+
+        <div class="submission-card">
+
+            <div class="card-heading">
+
+                <div>
+                    <h2>Submit a document</h2>
+
+                    <p>
+                        Enter your information and upload the document
+                        you want to submit for review.
+                    </p>
+                </div>
+
+                <div class="step-number">01</div>
+
+            </div>
+
+
+            <form id="documentForm">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Document
+                    </label>
+
+                    <label
+                        for="file"
+                        class="upload-box"
+                        id="uploadBox"
+                    >
+
+                        <div class="upload-icon">
+                            ↑
+                        </div>
+
+                        <div class="upload-content">
+
+                            <strong>
+                                Upload your document
+                            </strong>
+
+                            <span>
+                                Click to browse or drag and drop your file
+                            </span>
+
+                            <small>
+                                PDF, DOC, DOCX or other supported files
+                            </small>
+
+                        </div>
+
+                        <input
+                            type="file"
+                            id="file"
+                            name="file"
+                            required
+                        >
+
+                    </label>
+
+                    <div
+                        id="fileName"
+                        class="selected-file"
+                    ></div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    id="submitBtn"
+                >
+
+                    <span>Submit Document</span>
+
+                    <span class="arrow">→</span>
+
+                </button>
+
+
+                <div
+                    id="message"
+                    class="message"
+                ></div>
+
+
+                <div class="security-info">
+
+                    <div class="security-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Your information is secure
+                        </strong>
+
+                        <p>
+                            Your document is securely stored and only
+                            authorized administrators can review it.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <span>
+        © 2026 DocumentFlow
+    </span>
+
+    <span>
+        Secure Document Management
+    </span>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
