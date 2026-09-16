@@ -10,7 +10,7 @@ Users can submit their information and upload a document, while administrators c
 The Document Approval System is a serverless AWS project designed to demonstrate how multiple AWS services can work together to build a secure and scalable document workflow.
 
 Main Workflow
-
+```text
 User
   │
   │ Name + Email + Document
@@ -49,8 +49,7 @@ SubmitDocumentLambda
    Update Status    │
                     ▼
                User Email
-
----
+```
 
 ## 🏗️ Architecture
 
