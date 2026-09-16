@@ -71,6 +71,9 @@ SubmitDocumentLambda
 ### Approval Result
 ![Approval Result](images/approved_email.png)
 
+### Rejection Result
+![Rejection Result](images/rejected_email.png)
+
 ---
 
 ## ✨ Key Features
